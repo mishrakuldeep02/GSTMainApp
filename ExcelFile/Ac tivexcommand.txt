@@ -1,0 +1,7 @@
+
+C:\Windows\Microsoft.NET\Framework\v4.0.30319>regasm /u "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"
+
+
+
+
+C:\Windows\Microsoft.NET\Framework\v4.0.30319>regasm /codebase "C:\Vbxe\D\Amit\Amit Data\ActiveXTool\ActiveXTool\bin\Debug\ActiveXTool.dll"

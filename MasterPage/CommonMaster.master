@@ -1,0 +1,469 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CommonMaster.master.cs" Inherits="MasterPage_CommonMaster" %>
+
+<%@ Register Src="~/UserControl/wucTaxPayer.ascx" TagName="UserControll" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControl/wucAdminCA.ascx" TagName="UserControll1" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControl/wucArtical.ascx" TagName="UserControll2" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControl/wucAdministrator.ascx" TagName="UserControll3" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControl/wucCA.ascx" TagName="UserControll4" TagPrefix="cc1" %>
+
+<!DOCTYPE html>
+<html lang="en" class="no-ie">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>GST Saathi Admin</title>
+    <link rel="stylesheet" href="../Content/css/admin_style.css">
+    <script src="../Content/js/jquery.min.js"></script>
+    <script src="../Content/js/bootstrap.min.js"></script>
+    <script src="../Content/js/bootstrap-datepicker.js"></script>
+    <script src="../Content/js/pie-chart.js"></script>
+    <script src="../Scripts/jAlert.js"></script>
+    <script src="../Scripts/jAlert-functions.js"></script>
+    <link href="../Content/css/Loader.css" rel="stylesheet" />
+    <link href="../Content/css/jAlert.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    <script>
+        $(function () {
+            //for the data-jAlerts
+            $.jAlert('attach');
+
+            $.alertOnClick('.onOpen', {
+                'title': 'On Open',
+                'content': 'Do it!',
+                'onOpen': function () {
+                    alert('Hi!');
+                }
+            });
+
+            $.alertOnClick('.onClose', {
+                'title': 'On Close',
+                'content': 'Close to show popup',
+                'onClose': function () {
+                    alert('Hi!');
+                }
+            });
+
+            $.alertOnClick('.openClose', {
+                'title': 'Gonna close',
+                'content': 'This will close after 2 seconds',
+                'onOpen': function (alert) {
+                    window.setTimeout(function () {
+                        alert.closeAlert();
+                    }, 2000);
+                }
+            });
+
+            $.alertOnClick('.getTopClose', {
+                'title': 'Gonna close',
+                'content': 'This will close after 2 seconds',
+                'onOpen': function (alert) {
+                    window.setTimeout(function () {
+                        $.jAlert('current').closeAlert();
+                    }, 2000);
+                }
+            });
+
+            $.alertOnClick('.buttonsWithCallbacks', {
+                'title': 'DO IT',
+                'content': 'Click \'em',
+                'btns': [
+                    { 'text': 'Console Hi', 'closeAlert': false, 'onClick': function () { console.log('hi'); } },
+                    { 'text': 'Alert Hi', 'closeAlert': false, 'onClick': function () { alert('hi'); } }
+                ]
+            });
+        });
+	</script>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <form id="form1" runat="server">
+        <div class="loading"></div>
+        <%--<cc1:UserControlModal runat="server" ID="wucImportData" />--%>
+        <div class="wrapper">
+            <nav role="navigation" class="navbar navbar-default navbar-top navbar-fixed-top">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">
+                        <div class="brand-logo">
+                            <img src="../Content/img/logo.png" alt="App Logo" class="img-responsive">
+                        </div>
+                        <div class="brand-logo-collapsed">
+                            <img src="../Content/img/logo-single.png" alt="App Logo" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-wrapper">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs  ham-nav2">
+                                <em class="fa fa-navicon"></em>
+                            </a>
+                            <a href="#" data-toggle-state="aside-toggled" class="visible-xs ham-nav2-xs">
+                                <em class="fa fa-navicon"></em>
+                            </a>
+                        </li>
+                        <li>
+                            <%--<div class="gstr-nav-form gstr-client-search-nav">
+                                <select class="form-control search_client_by grp_inpt_gstr_ddl">
+                                    <option value="client_name">Client Name</option>
+                                    <option value="client_gstin">GSTIN</option>
+                                    <option value="client_pan">PAN No.</option>
+                                </select>
+                                <input list="clients" class="form-control search_client_by_placeholder grp_inpt_gstr_txt" placeholder="Search">
+                                <datalist id="clients">
+                                    <option value="Ankit Consultancy Pvt Ltd Indore">
+                                    <option value="Jay Dev Civilcon India Private Limited Bhopal">
+                                    <option value="Sushma Multitrade Pvt Ltd Mumbai">
+                                    <option value="Evergreen Colours India Private Limited Indore">
+                                    <option value="Kartikey Colonisers Pvt Ltd Ujjain">
+                                    <option value="Krini Infratech Private Limited Dhar">
+                                    <option value="Sarvottam Cropscience India Pvt Ltd Sagar">
+                                </datalist>
+                                <a class="btn btn-default grp_inpt_gstr_btn" href="frmClientPage.aspx">Go !</a>
+                            </div>--%>
+
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <div class="gstr-nav-form">
+                                <%--   <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="true" />
+                                <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator=" > " RenderCurrentNodeAsLink="true">
+                                </asp:SiteMapPath>--%>
+                                <hr />
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                                </asp:ContentPlaceHolder>
+                                <%--  <asp:DropDownList runat="server" ID="ddlMonthYear" class="form-control">
+
+                                </asp:DropDownList>--%>
+                                <%--<select class="form-control">
+                                    <option>April 2017</option>
+                                    <option>May 2017</option>
+                                    <option>June 2017</option>
+                                    <option selected>July 2017</option>
+                                </select>--%>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="../MasterPage/frmLogout.aspx">
+                                <em class="fa fa-sign-out"></em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="aside">
+                <nav class="sidebar scroll_gst">
+                    <div visible="false" runat="server" id="divSideContent">
+                        <cc1:UserControll ID="wucTaxPayer" runat="server" />
+                    </div>
+                    <div visible="false" runat="server" id="divAdminCA">
+                        <cc1:UserControll1 ID="wucAdminCA" runat="server" />
+                    </div>
+                    <div visible="false" runat="server" id="divArtical">
+                        <cc1:UserControll2 ID="wucArtical" runat="server" />
+                    </div>
+                    <div visible="false" runat="server" id="divAdministrator">
+                        <cc1:UserControll3 ID="wucAdministrator" runat="server" />
+                    </div>
+                    <div visible="false" runat="server" id="divca">
+                        <cc1:UserControll4 ID="UserControll4" runat="server" />
+                    </div>
+                </nav>
+            </div>
+            <asp:HiddenField runat="server" ID="hfUrl" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+        <!-- Modal Msg -->
+        <div id="sendMsg" class="modal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onclick="ClearFunction()">&times;</button>
+                        <h4 class="modal-title">Send Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="form-group">
+
+                                    <div class="col-xs-12 col-sm-6">
+                                        <label class="col-xs-12">Name</label>
+                                        <div class="col-xs-12">
+                                            <asp:TextBox runat="server" ID="txtNameMsg" CssClass="form-control" Enabled="false" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <label class="col-xs-12">Mobile</label>
+                                        <div class="col-xs-12">
+                                            <asp:TextBox runat="server" ID="txtMobileNoMsg" MaxLength="10" CssClass="form-control" Enabled="false" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12">Message</label>
+                                <div class="col-xs-12">
+                                    <asp:TextBox runat="server" ID="txtMessageMsg" TextMode="MultiLine" MaxLength="120" Height="100px" Style="max-height: 200px; max-width: 100%" CssClass="form-control textarea_char_left" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Label Text="" runat="server" ID="lblErrorMsgSMS" ForeColor="Red" />
+                        <asp:Button Text="Send" ID="btnSendMsg" runat="server" OnClick="btnSendMsg_Click" OnClientClick="return ValidationSMS();" CssClass="btn btn-info" />
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="ClearFunction()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Email -->
+        <div id="sendEmail" class="modal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onclick="ClearFunction()">&times;</button>
+                        <h4 class="modal-title">Send Email</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <label class="col-xs-12">To</label>
+                                        <div class="col-xs-12">
+                                            <asp:TextBox runat="server" ID="txtToEmail" CssClass="form-control" Enabled="false" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12">
+                                        <label class="col-xs-12">Subject</label>
+                                        <div class="col-xs-12">
+                                            <asp:TextBox runat="server" MaxLength="100" ID="txtSubjectEmail" CssClass="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12">Message Body</label>
+                                <div class="col-xs-12">
+                                    <asp:TextBox runat="server" ID="txtMessageEmail" MaxLength="120" TextMode="MultiLine" Height="100px" Style="max-height: 200px; max-width: 100%" CssClass="form-control textarea_char_left" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Label Text="" runat="server" ID="lblErrorMsgEmail" ForeColor="Red" />
+                        <asp:Button Text="Send" ID="btnSendEmail" OnClick="btnSendEmail_Click" OnClientClick="return ValidationEmail();" CssClass="btn btn-info" runat="server" />
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="ClearFunction()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="../Content/js/app.js"></script>
+    <script src="../Content/js/index.js"></script>
+    <link href="../Content/css/chosen.css" rel="stylesheet" />
+    <script src="../Scripts/chosen.jquery.js"></script>
+    <script src="../Content/js/MaxLength.min.js"></script>
+    <style>
+        a img {
+            border: none;
+        }
+
+        ol li {
+            list-style: decimal outside;
+        }
+
+        div#container {
+            width: 780px;
+            margin: 0 auto;
+            padding: 1em 0;
+        }
+
+        div.side-by-side {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+
+            div.side-by-side > div {
+                float: left;
+                width: 50%;
+            }
+
+                div.side-by-side > div > em {
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+        .clearfix:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            clear: both;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .textarea_char_left + div {
+            width: 100% !important;
+            text-align: right;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+
+        $('.chzn-search input[type="text"]').addClass('form-control');
+        $('.chzn-single').addClass('form-control');
+
+        //var prm = Sys.WebForms.PageRequestManager.getInstance();
+        //if (prm != null) {
+        //    prm.add_endRequest(function (sender, e) {
+        //        if (sender._postBackSettings.panelsToUpdate != null) {
+        //            $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+        //            $('.chzn-search input[type="text"]').addClass('form-control');
+        //            $('.chzn-single').addClass('form-control');
+        //        }
+        //    });
+        //}
+    </script>
+    <script type="text/javascript">
+        function formatAMPM(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var sec = date.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            sec = sec < 10 ? '0' + sec : sec;
+            var strTime = hours + ':' + minutes + ':' + sec + ' ' + ampm;
+            return strTime;
+        }
+        function getDateTime() {
+
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            var currentdate = new Date();
+            var datetime = weekday[currentdate.getDay()] + '  ' +
+                currentdate.getDate() + "/"
+                            + (currentdate.getMonth() + 1) + "/"
+                            + currentdate.getFullYear() + "  " + formatAMPM(currentdate)
+            $('#lblDateTime').html(datetime);
+        }
+        $(document).ready(function () {
+            setInterval(function () { getDateTime() }, 1000);
+        });
+
+        $(document).ready(function () {
+            $('.nav-list').removeClass('in');
+            $('.has-submenu-nav2').click(function () {
+                $(this).siblings('li').find('.nav-list').collapse('hide');
+            });
+            $('.ham-nav2').click(function () {
+                $('.list-item-1 ul').collapse('hide');
+                $('.nav2').find('.fa-caret-down').toggleClass('fa-caret-right');
+            });
+            $('.ham-nav2-xs').click(function () {
+                $('body').removeClass('aside-collapsed');
+            });
+            debugger;
+            var url = $(location).attr('pathname');
+            var pagename = '..' + url;
+
+            var isLastSlash = (url[url.length - 1] == "/") ? true : false;
+            var url = url.split("/");
+            var id = url[url.length - (isLastSlash ? 2 : 1)];
+            pagename = '../' + url[url.length - 2] + '/' + url[url.length - 1];
+            $('nav a').each(function () {
+                var href = $(this).attr('href');
+                if (href == pagename) {
+                    $(this).parent('li').addClass("active");
+                    if (!$('body').hasClass('aside-collapsed')) {
+                        $(this).parents('ul').addClass("in");
+                    }
+                }
+            });
+        });
+    </script>
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 //Normal Configuration
+                 $('#<%=txtMessageEmail.ClientID%>').val('');
+               $('#<%=txtMessageEmail.ClientID%>').MaxLength({ MaxLength: 120 });
+
+               $('#<%=txtMessageMsg.ClientID%>').val('');
+               $('#<%=txtMessageMsg.ClientID%>').MaxLength({ MaxLength: 120 });
+           });
+
+    </script>
+    <script type="text/javascript">
+        function ValidationEmail() {
+            if ($('#<%=txtToEmail.ClientID%>').val() == '') {
+                $('#<%=lblErrorMsgEmail.ClientID%>').html('To Can Not Be Null');
+                $('#<%=txtToEmail.ClientID%>').focus();
+                return false;
+            }
+            if ($('#<%=txtSubjectEmail.ClientID%>').val() == '') {
+                $('#<%=lblErrorMsgEmail.ClientID%>').html('Please Enter Subject');
+                $('#<%=txtSubjectEmail.ClientID%>').focus();
+                return false;
+            }
+            if ($('#<%=txtMessageEmail.ClientID%>').val() == '') {
+                $('#<%=lblErrorMsgEmail.ClientID%>').html('Please Enter Message Body');
+                $('#<%=txtMessageEmail.ClientID%>').focus();
+                return false;
+            }
+        }
+        function ValidationSMS() {
+            if ($('#<%=txtMobileNoMsg.ClientID%>').val() == '') {
+                $('#<%=lblErrorMsgSMS.ClientID%>').html('Mobile No Can Not Be Null');
+                $('#<%=txtMobileNoMsg.ClientID%>').focus();
+                return false;
+            }
+
+            if ($('#<%=txtMessageMsg.ClientID%>').val() == '') {
+                $('#<%=lblErrorMsgSMS.ClientID%>').html('Please Enter Message');
+                $('#<%=txtMessageMsg.ClientID%>').focus();
+                return false;
+            }
+        }
+
+    </script>
+    <script type="text/javascript">
+        function ClearFunction() {
+            $('#<%=lblErrorMsgSMS.ClientID%>').html('');
+            $('#<%=lblErrorMsgEmail.ClientID%>').html('');
+            $('#<%=txtMessageMsg.ClientID%>').focus();
+            $('#<%=txtMessageEmail.ClientID%>').focus();
+            $('#<%=txtSubjectEmail.ClientID%>').val('');
+            $('#<%=txtMessageEmail.ClientID%>').val('');
+            $('#<%=txtMessageMsg.ClientID%>').val('');
+
+        }
+    </script>
+</body>
+</html>
+
+

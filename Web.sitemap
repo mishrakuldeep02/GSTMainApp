@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap  xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <!--<siteMapNode url="CA Admin\frmTaxPayerSearch.aspx" title="Search"  description="">-->
+      <!--<siteMapNode url="CA Admin/frmTaxPayerSearch.aspx" title="Search Client"  description="">-->
+      <siteMapNode url="CA Admin/frmTaxpayerNew.aspx" title="Dashboard"  description="" >
+        <siteMapNode url="CA Admin/frmGstr1.aspx" title="Display GSTR-1"  description="" ></siteMapNode>
+          <siteMapNode url="CA Admin/frmGstr2.aspx" title="Display GSTR-2"  description="" ></siteMapNode>
+        <siteMapNode url="CA Admin/frmExcelImport.aspx" title="Import Sales Data"  description="" />
+             <siteMapNode url="CA Admin/frmDeleteData.aspx" title="Delete Data"  description="" />
+        <siteMapNode url="CA Admin/frmGSTR1Upload.aspx" title="Upload GSTR1"  description="" />
+        <siteMapNode url="Client/frmImportPurchaseData.aspx" title="Import Purchase Data"  description="" />
+        <siteMapNode url="CA Admin/frmGenerateMismatch.aspx" title="Generate Mismatch"  description="" />
+        <siteMapNode url="CA Admin/FrmExcelMapping.aspx" title="Excel Mapping"  description="" />
+        <siteMapNode url="CA Admin/frmImportGSTR3B.aspx" title="Import GSTR-3B"  description="" />
+        <siteMapNode url="CA Admin/frmGSTR3b.aspx" title="Display GSTR-3B Data"  description="" />
+        <siteMapNode url="CA Admin/FrmGSTR1Summary.aspx" title="GSTR-1 Summary"  description="GSTR-1 Summary" />
+        <siteMapNode url="CA Admin/FrmGSTR2Summary.aspx" title="GSTR-2 Summary"  description="GSTR-2 Summary" />
+        <siteMapNode url="CA Admin/frmGSTR1File.aspx" title="File GSTR-1"  description="File GSTR-1" />
+        <siteMapNode url="CA Admin/frmGovernmentExcel.aspx" title="Download GSTR-1 Government Excel"  description="Download GSTR-1 Government Excel" />
+        <siteMapNode url="CA Admin/frm_Rpt_GSTR1.aspx" title="GSTR-1 Report"  description="GSTR-1 Report" />
+        <siteMapNode url="CA Admin/frmGSTR2File.aspx" title="File GSTR-2"  description="File GSTR-2" />
+        <siteMapNode url="CA Admin/frm_Rpt_GSTR2.aspx" title="GSTR-2 Report"  description="GSTR-2 Report" />
+        <siteMapNode url="CA Admin/frmGSTRform3B.aspx" title="File GSTR-3B"  description="File GSTR-3B" />
+        <siteMapNode url="CA Admin/frmRegisterDSC.aspx" title="Register DSC"  description="Register DSC" />
+        <siteMapNode url="CA Admin/frmDisplayPurchaseData.aspx" title="Display Purchase Data"  description="Display Purchase Data" />
+        <siteMapNode url="CA Admin/frmB2B.aspx" title="GSTR-1 Entry"  description="GSTR-1 Entry" />
+        <siteMapNode url="CA Admin/frmImportTallySalesData.aspx" title="Import Tally Excel"  description="Import Tally Excel" />
+        <siteMapNode url="CA Admin/frmGSTR2AAction.aspx" title="GSTR-2A Action"  description="GSTR-2A Action" />
+        <siteMapNode url="CA Admin/frmGSTR2Summary_design.aspx" title="GSTR-2 Summary"  description="GSTR-2 Summary" >
+          <siteMapNode url="CA Admin/frmGSTR2Action.aspx" title="Display GSTR-2"  description="Display GSTR-2" />
+        </siteMapNode>
+
+
+      </siteMapNode>
+        <!--</siteMapNode>
+      </siteMapNode>-->
+      <!--</siteMapNode>-->
+    <!--</siteMapNode>-->
+</siteMap>

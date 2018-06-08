@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+***GST SAATHI REUTRN FILING PORTAL****                           Client Code : 2
+
+   SALES DATA IMPORT VALIDITY :                                  Client Name : Manoj Goswami
+   Date & Time : 12-10-2017 03:37:11 AM                          Client GSTIN : 12TATAA1234T1Z1
+
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+Section   |Line No |Invoice No.    |Invoice Date|Invoice Value|Error Desc With Code
+B2B       |1       |09R1710016     |01/07/2017  |59000        |28 - Invalid CTIN
+B2B       |4       |60R1710053     |03/07/2017  |74000        |28 - Invalid CTIN
+B2B       |6       |02C1710029     |04/07/2017  |4499         |28 - Invalid CTIN
+B2B       |7       |02C1710030     |04/07/2017  |35800        |10 - Bill GSTIN Number cannot be different for same Invoice Number.
+B2B       |7       |02C1710030     |04/07/2017  |35800        |28 - Invalid CTIN
+B2B       |8       |02C1710030     |04/07/2017  |35800        |10 - Bill GSTIN Number cannot be different for same Invoice Number.
+B2B       |24      |02R1710089     |07/07/2017  |35499        |28 - Invalid CTIN
+B2B       |25      |02R1710089     |07/07/2017  |35499        |28 - Invalid CTIN
+B2B       |41      |09R1710275     |08/07/2017  |7999         |22 - Place of Supply (POS) Code is to be selected from dropdown list in Excel.
+B2B       |75      |18R1710059     |13/07/2017  |18600        |28 - Invalid CTIN
+B2B       |131     |09R1710721     |18/07/2017  |61999        |28 - Invalid CTIN
+B2B       |200     |69R1710116     |23/07/2017  |16300        |28 - Invalid CTIN
+B2B       |201     |02C1710212     |24/07/2017  |1744         |28 - Invalid CTIN
+B2B       |257     |09R1711107     |27/07/2017  |41899        |28 - Invalid CTIN
+B2B       |278     |09R1711168     |29/07/2017  |67300        |28 - Invalid CTIN
+B2B       |279     |09R1711168     |29/07/2017  |67300        |28 - Invalid CTIN
+B2CS      |32      |               |01/01/1900  |0            |22 - Place of Supply (POS) Code is to be selected from dropdown list in Excel.
+B2CS      |33      |               |01/01/1900  |0            |22 - Place of Supply (POS) Code is to be selected from dropdown list in Excel.
+B2CS      |34      |               |01/01/1900  |0            |22 - Place of Supply (POS) Code is to be selected from dropdown list in Excel.
+
+******************************************END OF THE RECORDS***************************************************

@@ -1,0 +1,105 @@
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+***GST SAATHI REUTRN FILING PORTAL****                           Client Code : 3
+
+   SALES DATA IMPORT VALIDITY :                                  Client Name : Tata consultancy & Services Indore
+   Date & Time : 17-11-2017 14:31:13 PM                          Client GSTIN : 23AOOPY8203P1Z1
+
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+Section   |Line No |Error Desc With Code
+b2b       |8       |Invalid Numberic value
+b2b       |8       |Invalid Numberic value
+b2b       |8       |Invalid Numberic value
+b2b       |8       |Invalid Numberic value
+b2b       |8       |Invalid Numberic value
+b2b       |8       |Invalid Numberic value
+b2b       |9       |Invalid Numberic value
+b2b       |9       |Invalid Numberic value
+b2b       |9       |Invalid Numberic value
+b2b       |9       |Invalid Numberic value
+b2b       |9       |Invalid Numberic value
+b2b       |10      |Invalid Numberic value
+b2b       |10      |Invalid Numberic value
+b2b       |10      |Invalid Numberic value
+b2b       |10      |Invalid Numberic value
+b2b       |10      |Invalid Numberic value
+b2b       |11      |Invalid Numberic value
+b2b       |11      |Invalid Numberic value
+b2b       |11      |Invalid Numberic value
+b2b       |11      |Invalid Numberic value
+b2b       |11      |Invalid Numberic value
+b2b       |12      |Invalid Numberic value
+b2b       |12      |Invalid Numberic value
+b2b       |12      |Invalid Numberic value
+b2b       |12      |Invalid Numberic value
+b2b       |12      |Invalid Numberic value
+b2b       |12      |Invalid Numberic value
+b2b       |13      |Invalid Numberic value
+b2b       |13      |Invalid Numberic value
+b2b       |13      |Invalid Numberic value
+b2b       |13      |Invalid Numberic value
+b2b       |13      |Invalid Numberic value
+b2b       |15      |Invalid Numberic value
+b2b       |15      |Invalid Numberic value
+b2b       |15      |Invalid Numberic value
+b2b       |15      |Invalid Numberic value
+b2b       |15      |Invalid Numberic value
+b2b       |15      |Invalid Numberic value
+b2b       |16      |Invalid Numberic value
+b2b       |16      |Invalid Numberic value
+b2b       |16      |Invalid Numberic value
+b2b       |16      |Invalid Numberic value
+b2b       |16      |Invalid Numberic value
+b2b       |16      |Invalid Numberic value
+b2b       |17      |Invalid Numberic value
+b2b       |17      |Invalid Numberic value
+b2b       |17      |Invalid Numberic value
+b2b       |17      |Invalid Numberic value
+b2b       |17      |Invalid Numberic value
+b2b       |18      |Invalid Numberic value
+b2b       |18      |Invalid Numberic value
+b2b       |18      |Invalid Numberic value
+b2b       |18      |Invalid Numberic value
+b2b       |18      |Invalid Numberic value
+impg      |7       |Invalid Numberic value
+impg      |7       |Invalid Numberic value
+impg      |7       |Invalid Numberic value
+impg      |8       |Invalid Numberic value
+impg      |8       |Invalid Numberic value
+impg      |8       |Invalid Numberic value
+impg      |8       |Invalid Numberic value
+impg      |9       |Invalid Numberic value
+impg      |9       |Invalid Numberic value
+impg      |9       |Invalid Numberic value
+impg      |9       |Invalid Numberic value
+impg      |10      |Invalid Numberic value
+impg      |10      |Invalid Numberic value
+impg      |10      |Invalid Numberic value
+impg      |10      |Invalid Numberic value
+impg      |12      |Invalid Numberic value
+impg      |12      |Invalid Numberic value
+impg      |12      |Invalid Numberic value
+impg      |12      |Invalid Numberic value
+impg      |13      |Invalid Numberic value
+impg      |13      |Invalid Numberic value
+impg      |13      |Invalid Numberic value
+impg      |13      |Invalid Numberic value
+exemp     |5       |Invalid Numberic value
+itcr      |5       |Invalid Numberic value
+hsnsum    |5       |Invalid Numberic value
+hsnsum    |5       |Invalid Numberic value
+hsnsum    |6       |Invalid Numberic value
+hsnsum    |6       |Invalid Numberic value
+hsnsum    |7       |Invalid Numberic value
+hsnsum    |7       |Invalid Numberic value
+hsnsum    |8       |Invalid Numberic value
+hsnsum    |8       |Invalid Numberic value
+hsnsum    |9       |Invalid Numberic value
+hsnsum    |9       |Invalid Numberic value
+hsnsum    |10      |Invalid Numberic value
+hsnsum    |10      |Invalid Numberic value
+
+******************************************END OF THE RECORDS***************************************************

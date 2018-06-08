@@ -1,0 +1,5235 @@
+{
+  "type": "object",
+  "title": "GSTR2 Schema",
+  "properties": {
+    "gstin": {
+      "description": "Supplier GSTIN",
+      "$ref": "#/definitions/gstin"
+    },
+    "fp": {
+      "description": "Financial Period",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+    },
+    "version": {
+      "description": "Version",
+      "type": "string"
+    },
+    "hash": {
+      "description": "Hash Version",
+      "type": "string"
+    },
+    "imp_g": {
+      "type": "array",
+      "minLength": 1,
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "description": "Flag for identifying new/modified/deleted",
+                "$ref": "#/definitions/operationflag"
+              },
+              "is_sez": {
+                "description": "Flag for identifying SEZ or not",
+                "$ref": "#/definitions/sez_flag"
+              },
+              "stin": {
+                "description": "Supplier TIN",
+                "$ref": "#/definitions/gstin"
+              },
+              "boe_num": {
+                "description": "Bill of Entry No.",
+                "$ref": "#/definitions/boe_num"
+              },
+              "boe_dt": {
+                "description": "Bill of Entry Date",
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "boe_val": {
+                "description": "Total Invoice Value",
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "port_code": {
+                "description": "Port Code",
+                "$ref": "#/definitions/port_cd"
+              },
+              "chksum": {
+                "description": "chksum",
+                "$ref": "#/definitions/chksum"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "txval": {
+                      "description": "Taxable value ",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "description": "Rate",
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "description": "IGST amt",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "elg": {
+                      "description": "Eligibility for ITC",
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "description": "Total IGST available as ITC ",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tx_cs": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "rt",
+                    "txval",
+                    "iamt",
+                    "tx_i",
+                    "elg",
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "port_code",
+              "boe_num",
+              "boe_dt",
+              "boe_val",
+              "itms"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "description": "Flag for identifying new/modified/deleted",
+                "$ref": "#/definitions/otherflag"
+              },
+              "is_sez": {
+                "description": "Flag for identifying SEZ or not",
+                "$ref": "#/definitions/sez_flag"
+              },
+              "stin": {
+                "description": "Supplier TIN",
+                "$ref": "#/definitions/gstin"
+              },
+              "boe_num": {
+                "description": "Bill of Entry No.",
+                "$ref": "#/definitions/boe_num"
+              },
+              "boe_dt": {
+                "description": "Bill of Entry Date",
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "boe_val": {
+                "description": "Total Invoice Value",
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "port_code": {
+                "description": "Port Code",
+                "$ref": "#/definitions/port_cd"
+              },
+              "chksum": {
+                "description": "chksum",
+                "$ref": "#/definitions/chksum"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "txval": {
+                      "description": "Taxable value ",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "description": "Rate",
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "description": "IGST amt",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "elg": {
+                      "description": "Eligibility for ITC",
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "description": "Total IGST available as ITC ",
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tx_cs": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "port_code",
+              "boe_num",
+              "boe_dt",
+              "flag"
+            ]
+          }
+        ]
+      }
+    },
+    "imp_ga": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "$ref": "#/definitions/operationflag"
+              },
+              "is_sez": {
+                "description": "Flag for identifying SEZ or not",
+                "$ref": "#/definitions/sez_flag"
+              },
+              "stin": {
+                "description": "Supplier TIN",
+                "$ref": "#/definitions/gstin"
+              },
+              "boe_num": {
+                "$ref": "#/definitions/num"
+              },
+              "boe_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "boe_val": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "port_code": {
+                "description": "Port Code",
+                "$ref": "#/definitions/port_cd"
+              },
+              "chksum": {
+                "type": "string"
+              },
+              "oboe_num": {
+                "$ref": "#/definitions/num"
+              },
+              "oport_code":{
+              	 "description": "Original Port Code",
+                "$ref": "#/definitions/port_cd"
+              },
+              "oboe_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer",
+                      "minLength": 1
+                    },
+                    "hsn_sc": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "txval": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "irt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csrt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "elg": {
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tc_i": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tx_cs": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tc_cs": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "num",
+                    "txval",
+                    "elg"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "boe_num",
+              "boe_dt",
+              "boe_val",
+              "port_code",
+              "oport_code",
+              "oboe_num",
+              "oboe_dt",
+              "itms"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "$ref": "#/definitions/otherflag"
+              },
+              "is_sez": {
+                "description": "Flag for identifying SEZ or not",
+                "$ref": "#/definitions/sez_flag"
+              },
+              "stin": {
+                "description": "Supplier TIN",
+                "$ref": "#/definitions/gstin"
+              },
+              "boe_num": {
+                "$ref": "#/definitions/num"
+              },
+              "boe_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "boe_val": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "port_code": {
+                "description": "Port Code",
+                "$ref": "#/definitions/port_cd"
+              },
+              "chksum": {
+                "type": "string"
+              },
+               "oport_code":{
+              	 "description": "Original Port Code",
+                "$ref": "#/definitions/port_cd"
+              },
+              "oboe_num": {
+                "$ref": "#/definitions/num"
+              },
+              "oboe_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer",
+                      "minLength": 1
+                    },
+                    "hsn_sc": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "txval": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "irt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csrt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "elg": {
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tc_i": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tx_cs": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tc_cs": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "port_code",
+              "boe_num",
+              "boe_dt",
+              "flag"
+            ]
+          }
+        ]
+      }
+    },
+    "imp_s": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "$ref": "#/definitions/operationflag"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "ival": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "rt": {
+                      "description": "Rate",
+                      "$ref": "#/definitions/rate"
+                    },
+                    "num": {
+                      "type": "integer"
+                    },
+                    "txval": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "elg": {
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tx_cs": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "rt",
+                    "txval",
+                    "iamt",
+                    "tx_i",
+                    "elg",
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "inum",
+              "idt",
+              "ival",
+              "pos",
+              "itms"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "$ref": "#/definitions/otherflag"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "ival": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "txval": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "description": "Rate",
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "elg": {
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "tx_cs": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "inum",
+              "idt",
+              "flag"
+            ]
+          }
+        ]
+      }
+    },
+    "imp_sa": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          {
+            "properties": {
+              "flag": {
+                "$ref": "#/definitions/operationflag"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "ival": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "oinum": {
+                "$ref": "#/definitions/num"
+              },
+              "oidt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "sac": {
+                      "type": "string"
+                    },
+                    "txval": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "irt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "csrt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "elg": {
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "tc_i": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "tx_cs": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "tc_cs": {
+                      "type": "number",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "num",
+                    "txval",
+                    "elg"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "inum",
+              "idt",
+              "ival",
+              "oinum",
+              "oidt",
+              "itms"
+            ]
+          },
+          {
+            "properties": {
+              "flag": {
+                "$ref": "#/definitions/otherflag"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "ival": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "oinum": {
+                "$ref": "#/definitions/num"
+              },
+              "oidt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "sac": {
+                      "type": "string"
+                    },
+                    "txval": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "irt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "csrt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "elg": {
+                      "type": "string"
+                    },
+                    "tx_i": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "tc_i": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "tx_cs": {
+                      "type": "number",
+                      "minLength": 1
+                    },
+                    "tc_cs": {
+                      "type": "number",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "inum",
+              "idt",
+              "flag"
+            ]
+          }
+        ]
+      }
+    },
+    "nil_supplies": {
+      "type": "object",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "flag": {
+              "$ref": "#/definitions/operationflag"
+            },
+            "chksum": {
+              "type": "string"
+            },
+            "inter": {
+              "type": "object",
+              "properties": {
+                "cpddr": {
+                  "description": "Value of supplies received from Compounding Dealer",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "exptdsply": {
+                  "description": "Value of exempted supplies received",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "ngsply": {
+                  "description": "Total Non GST outward supplies",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "nilsply": {
+                  "description": "Nil Rated Supply",
+                  "$ref": "#/definitions/neg-amt"
+                }
+              }
+            },
+            "intra": {
+              "type": "object",
+              "properties": {
+                "cpddr": {
+                  "description": "Value of supplies received from Compounding Dealer",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "exptdsply": {
+                  "description": "Value of exempted supplies received",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "ngsply": {
+                  "description": "Total Non GST outward supplies",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "nilsply": {
+                  "description": "Nil Rated Supply",
+                  "$ref": "#/definitions/neg-amt"
+                }
+              }
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "inter"
+              ]
+            },
+            {
+              "required": [
+                "intra"
+              ]
+            }
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "flag": {
+              "$ref": "#/definitions/otherflag"
+            },
+            "chksum": {
+              "type": "string"
+            },
+            "inter": {
+              "type": "object",
+              "properties": {
+                "cpddr": {
+                  "description": "Value of supplies received from Compounding Dealer",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "exptdsply": {
+                  "description": "Value of exempted supplies received",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "ngsply": {
+                  "description": "Total Non GST outward supplies",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "nilsply": {
+                  "description": "Nil Rated Supply",
+                  "$ref": "#/definitions/neg-amt"
+                }
+              }
+            },
+            "intra": {
+              "type": "object",
+              "properties": {
+                "cpddr": {
+                  "description": "Value of supplies received from Compounding Dealer",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "exptdsply": {
+                  "description": "Value of exempted supplies received",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "ngsply": {
+                  "description": "Total Non GST outward supplies",
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "nilsply": {
+                  "description": "Nil Rated Supply",
+                  "$ref": "#/definitions/neg-amt"
+                }
+              }
+            }
+          },
+          "required": [
+            "flag"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "txi": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/operationflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "rt",
+                    "adamt",
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sply_ty"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/otherflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "flag",
+              "sply_ty"
+            ]
+          }
+        ]
+      }
+    },
+    "atxi": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/operationflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "omon": {
+                "description": "Original Month",
+      			"type": "string",
+      			"minLength": 1,
+      			"pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "rt",
+                    "adamt",
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sply_ty",
+              "omon"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/otherflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "omon": {
+                "description": "Original Month",
+      			"type": "string",
+      			"minLength": 1,
+      			"pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "flag",
+              "sply_ty",
+              "omon"
+            ]
+          }
+        ]
+      }
+    },
+    "hsnsum": {
+      "type": "object",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "flag": {
+              "$ref": "#/definitions/operationflag"
+            },
+            "chksum": {
+              "type": "string"
+            },
+            "det": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "num": {
+                    "type": "integer"
+                  },
+                  "hsn_sc": {
+                    "type": "string",
+                    "minLength":1,
+                    "maxLength": 8
+                  },
+                  "desc": {
+                    "type": "string",
+                    "minLength":1,
+                    "maxLength": 30
+                  },
+                  "uqc": {
+                    "type": "string"
+                  },
+                  "qty": {
+                    "$ref": "#/definitions/qty"
+                  },
+                  "txval": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "val": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "camt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  }
+                },
+                "anyOf": [
+                  {
+                    "required": [
+                      "qty",
+                      "uqc",
+                      "hsn_sc",
+                      "txval"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "qty",
+                      "uqc",
+                      "desc",
+                      "txval"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "det"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "flag": {
+              "$ref": "#/definitions/otherflag"
+            },
+            "chksum": {
+              "type": "string"
+            },
+            "det": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "num": {
+                    "type": "integer"
+                  },
+                  "hsn_sc": {
+                    "type": "string"
+                  },
+                  "desc": {
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "uqc": {
+                    "type": "string"
+                  },
+                  "qty": {
+                    "$ref": "#/definitions/qty"
+                  },
+                  "txval": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "val": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "camt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "flag"
+          ]
+        }
+      ]
+    },
+    "txpd": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/operationflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "rt",
+                    "adamt",
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sply_ty"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/otherflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "flag",
+              "sply_ty"
+            ]
+          }
+        ]
+      }
+    },
+    "txpda": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/operationflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "omon": {
+                "description": "Original Month",
+      			"type": "string",
+      			"minLength": 1,
+      			"pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  },
+                  "required": [
+                    "rt",
+                    "adamt",
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sply_ty",
+              "omon"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "flag": {
+                "id": "#/definitions/otherflag"
+              },
+              "chksum": {
+                "id": "#/definitions/chksum"
+              },
+              "pos": {
+                "$ref": "#/definitions/state_cd"
+              },
+              "sply_ty": {
+                "type": "string",
+                "enum": [
+                  "INTER",
+                  "INTRA"
+                ]
+              },
+              "omon": {
+                "description": "Original Month",
+      			"type": "string",
+      			"minLength": 1,
+      			"pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "adamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "camt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "csamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "iamt": {
+                      "$ref": "#/definitions/amt"
+                    },
+                    "rt": {
+                      "$ref": "#/definitions/rate"
+                    },
+                    "samt": {
+                      "$ref": "#/definitions/amt"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "flag",
+              "sply_ty",
+              "omon"
+            ]
+          }
+        ]
+      }
+    },
+    "b2b": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ctin": {
+            "$ref": "#/definitions/gstin"
+          },
+          "inv": {
+            "type": "array",
+            "minLength": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/operationflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "$ref": "#/definitions/state_cd"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "val",
+                    "rchrg",
+                    "inv_typ",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "type": "string",
+                      "enum": [
+                        "M"
+                      ]
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "$ref": "#/definitions/state_cd"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "val",
+                    "rchrg",
+                    "itms",
+                    "inv_typ",
+                    "chksum"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/actionflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "$ref": "#/definitions/state_cd"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "chksum",
+                    "flag"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/acceptflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "$ref": "#/definitions/state_cd"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "chksum",
+                    "flag",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/otherflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "$ref": "#/definitions/state_cd"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "flag"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "ctin",
+          "inv"
+        ]
+      }
+    },
+    "b2bur": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inv": {
+            "type": "array",
+            "minLength": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/operationflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "sply_ty": {
+                      "$ref": "#/definitions/supply_type"
+                    },
+                    "pos": {
+                      "$ref": "#/definitions/state_cd"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "val",
+                    "sply_ty",
+                    "pos",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/otherflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "flag"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "inv"
+        ]
+      }
+    },
+    "b2ba": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ctin": {
+            "$ref": "#/definitions/gstin"
+          },
+          "inv": {
+            "type": "array",
+            "minLength": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/operationflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "oinum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "oidt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "type": "string"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "val",
+                    "pos",
+                    "rchrg",
+                    "oinum",
+                    "oidt",
+                    "inv_typ",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/actionflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "oinum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "oidt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "type": "string"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "chksum",
+                    "flag"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "type": "string",
+                      "enum": [
+                        "A"
+                      ]
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "oinum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "oidt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "type": "string"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "chksum",
+                    "flag",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/otherflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "oinum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "oidt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "type": "string"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "inv_typ": {
+                      "$ref": "#/definitions/invtype"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "flag"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "ctin",
+          "inv"
+        ]
+      }
+    },
+    "b2bura": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inv": {
+            "type": "array",
+            "minLength": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {                    
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/operationflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "oinum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "oidt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "type": "string"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "camt": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "samt": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "minLength": 1
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "tx_s": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "tx_c": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "tx_cs": {
+                                "type": "number",
+                                "minLength": 1
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "val",
+                    "pos",
+                    "oinum",
+                    "oidt",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {                    
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/otherflag"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "oinum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "oidt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "pos": {
+                      "type": "string"
+                    },
+                    "rchrg": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "camt": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "samt": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "minLength": 1
+                              }
+                            },
+                            "required": [
+                              "txval",
+                              "rt"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "tx_s": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "tx_c": {
+                                "type": "number",
+                                "minLength": 1
+                              },
+                              "tx_cs": {
+                                "type": "number",
+                                "minLength": 1
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "inum",
+                    "idt",
+                    "flag"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "inv"
+        ]
+      }
+    },
+    "cdn": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ctin": {
+            "$ref": "#/definitions/gstin"
+          },
+          "nt": {
+            "type": "array",
+            "minLength": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/operationflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "rt",
+                              "txval"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "ntty",
+                    "nt_num",
+                    "nt_dt",
+                    "inum",
+                    "idt",
+                    "rsn",
+                    "val",
+                    "p_gst",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "type": "string",
+                      "enum": [
+                        "M"
+                      ]
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "rt",
+                              "txval"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "ntty",
+                    "nt_num",
+                    "nt_dt",
+                    "inum",
+                    "idt",
+                    "rsn",
+                    "val",
+                    "p_gst",
+                    "itms"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/actionflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "num"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "nt_num",
+                    "nt_dt",
+                    "flag",
+                    "chksum"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/otherflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "num"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "nt_num",
+                    "nt_dt",
+                    "flag"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/acceptflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "val": {
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "rt",
+                              "txval"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "nt_num",
+                    "nt_dt",
+                    "flag",
+                    "chksum",
+                    "itms"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "ctin",
+          "nt"
+        ]
+      }
+    },
+    "cdna": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ctin": {
+            "$ref": "#/definitions/gstin"
+          },
+          "nt": {
+            "type": "array",
+            "minLength": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/operationflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "ont_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "ont_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "val":{
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "rt",
+                              "txval"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itm_det",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "ntty",
+                    "nt_num",
+                    "nt_dt",
+                    "ont_num",
+                    "ont_dt",
+                    "inum",
+                    "idt",
+                    "rsn",
+                    "val",
+                    "p_gst",
+                    "itms"
+                  ]
+                },                
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/actionflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "ont_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "ont_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "val":{
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "num"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "nt_num",
+                    "nt_dt",
+                    "ont_num",
+                    "ont_dt",
+                    "flag",
+                    "chksum"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/otherflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "ont_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "ont_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "val":{
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "num"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "nt_num",
+                    "nt_dt",
+                    "ont_num",
+                    "ont_dt",
+                    "flag"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "chksum": {
+                      "$ref": "#/definitions/chksum"
+                    },
+                    "flag": {
+                      "$ref": "#/definitions/acceptflag"
+                    },
+                    "ntty": {
+                      "type": "string",
+                      "enum": [
+                        "C",
+                        "D",
+                        "R"
+                      ]
+                    },
+                    "nt_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "nt_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "ont_num": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "ont_dt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "inum": {
+                      "$ref": "#/definitions/num"
+                    },
+                    "idt": {
+                      "$ref": "#/definitions/nonEmptydate"
+                    },
+                    "rsn": {
+                      "$ref": "#/definitions/nonEmptyString"
+                    },
+                    "val":{
+                      "$ref": "#/definitions/higher_lvl_amt"
+                    },
+                    "p_gst": {
+                      "$ref": "#/definitions/boolean"
+                    },
+                    "itms": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "num": {
+                            "type": "integer"
+                          },
+                          "itm_det": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "$ref": "#/definitions/rate"
+                              },
+                              "txval": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "iamt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "camt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "samt": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "csamt": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "rt",
+                              "txval"
+                            ]
+                          },
+                          "itc": {
+                            "type": "object",
+                            "properties": {
+                              "elg": {
+                                "type": "string"
+                              },
+                              "tx_i": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_s": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_c": {
+                                "$ref": "#/definitions/amt"
+                              },
+                              "tx_cs": {
+                                "$ref": "#/definitions/amt"
+                              }
+                            },
+                            "required": [
+                              "elg"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "num",
+                          "itc"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "nt_num",
+                    "nt_dt",
+                    "ont_num",
+                    "ont_dt",
+                    "flag",
+                    "chksum",
+                    "itms"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "ctin",
+          "nt"
+        ]
+      }
+    },
+    "cdnur": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "rtin": {
+                "$ref": "#/definitions/gstin"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "flag": {
+                "$ref": "#/definitions/operationflag"
+              },
+              "ntty": {
+                "type": "string",
+                "enum": [
+                  "C",
+                  "D",
+                  "R"
+                ]
+              },
+              "nt_num": {
+                "$ref": "#/definitions/num"
+              },
+              "nt_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "rsn": {
+                "$ref": "#/definitions/nonEmptyString"
+              },
+              "val": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "p_gst": {
+                "$ref": "#/definitions/boolean"
+              },
+              "inv_typ":{
+                "$ref": "#/definitions/inv_type"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "itm_det": {
+                      "type": "object",
+                      "properties": {
+                        "rt": {
+                          "$ref": "#/definitions/rate"
+                        },
+                        "txval": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "camt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "samt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "csamt": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      },
+                      "required": [
+                        "rt",
+                        "txval"
+                      ]
+                    },
+                    "itc": {
+                      "type": "object",
+                      "properties": {
+                        "elg": {
+                          "type": "string"
+                        },
+                        "tx_s": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_c": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_cs": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      },
+                      "required": [
+                        "elg"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "num",
+                    "itm_det",
+                    "itc"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "ntty",
+              "nt_num",
+              "nt_dt",
+              "inum",
+              "idt",
+              "rsn",
+              "val",
+              "p_gst",
+              "itms"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "rtin": {
+                "$ref": "#/definitions/gstin"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "flag": {
+                "$ref": "#/definitions/otherflag"
+              },
+              "ntty": {
+                "type": "string",
+                "enum": [
+                  "C",
+                  "D",
+                  "R"
+                ]
+              },
+              "nt_num": {
+                "$ref": "#/definitions/num"
+              },
+              "nt_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "rsn": {
+                "$ref": "#/definitions/nonEmptyString"
+              },
+              "val": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "p_gst": {
+                "$ref": "#/definitions/boolean"
+              },
+               "inv_typ":{
+                "$ref": "#/definitions/inv_type"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "itm_det": {
+                      "type": "object",
+                      "properties": {
+                        "rt": {
+                          "$ref": "#/definitions/rate"
+                        },
+                        "txval": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "camt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "samt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "csamt": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      }
+                    },
+                    "itc": {
+                      "type": "object",
+                      "properties": {
+                        "elg": {
+                          "type": "string"
+                        },
+                        "tx_s": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_c": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_cs": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "nt_num",
+              "nt_dt",
+              "flag"
+            ]
+          }
+        ]
+      }
+    },
+    "cdnura": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "rtin": {
+                "$ref": "#/definitions/gstin"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "flag": {
+                "$ref": "#/definitions/operationflag"
+              },
+              "ntty": {
+                "type": "string",
+                "enum": [
+                  "C",
+                  "D",
+                  "R"
+                ]
+              },
+              "nt_num": {
+                "$ref": "#/definitions/num"
+              },
+              "nt_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "ont_num": {
+                "$ref": "#/definitions/num"
+              },
+              "ont_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "rsn": {
+                "$ref": "#/definitions/nonEmptyString"
+              },
+              "val": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "p_gst": {
+                "$ref": "#/definitions/boolean"
+              },
+               "inv_typ":{
+                "$ref": "#/definitions/inv_type"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "itm_det": {
+                      "type": "object",
+                      "properties": {
+                        "rt": {
+                          "$ref": "#/definitions/rate"
+                        },
+                        "txval": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "camt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "samt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "csamt": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      },
+                      "required": [
+                        "rt",
+                        "txval"
+                      ]
+                    },
+                    "itc": {
+                      "type": "object",
+                      "properties": {
+                        "elg": {
+                          "type": "string"
+                        },
+                        "tx_s": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_c": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_cs": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      },
+                      "required": [
+                        "elg"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "num",
+                    "itm_det",
+                    "itc"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "ntty",
+              "nt_num",
+              "nt_dt",
+              "ont_num",
+              "ont_dt",
+              "inum",
+              "idt",
+              "rsn",
+              "val",
+              "p_gst",
+              "itms"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "rtin": {
+                "$ref": "#/definitions/gstin"
+              },
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "flag": {
+                "$ref": "#/definitions/otherflag"
+              },
+              "ntty": {
+                "type": "string",
+                "enum": [
+                  "C",
+                  "D",
+                  "R"
+                ]
+              },
+              "nt_num": {
+                "$ref": "#/definitions/num"
+              },
+              "nt_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "ont_num": {
+                "$ref": "#/definitions/num"
+              },
+              "ont_dt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "inum": {
+                "$ref": "#/definitions/num"
+              },
+              "idt": {
+                "$ref": "#/definitions/nonEmptydate"
+              },
+              "rsn": {
+                "$ref": "#/definitions/nonEmptyString"
+              },
+              "val": {
+                "$ref": "#/definitions/higher_lvl_amt"
+              },
+              "p_gst": {
+                "$ref": "#/definitions/boolean"
+              },
+               "inv_typ":{
+                "$ref": "#/definitions/inv_type"
+              },
+              "itms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "num": {
+                      "type": "integer"
+                    },
+                    "itm_det": {
+                      "type": "object",
+                      "properties": {
+                        "rt": {
+                          "$ref": "#/definitions/rate"
+                        },
+                        "txval": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "camt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "samt": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "csamt": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      }
+                    },
+                    "itc": {
+                      "type": "object",
+                      "properties": {
+                        "elg": {
+                          "type": "string"
+                        },
+                        "tx_s": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_c": {
+                          "$ref": "#/definitions/amt"
+                        },
+                        "tx_cs": {
+                          "$ref": "#/definitions/amt"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "num"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "nt_num",
+              "nt_dt",
+              "ont_num",
+              "ont_dt",
+              "flag"
+            ]
+          }
+        ]
+      }
+    },
+    "itc_rvsl": {
+      "anyOf": [
+        {
+          "type": "object",
+          "anyOf": [
+            {
+              "required": [
+                "rule2_2"
+              ]
+            },
+            {
+              "required": [
+                "rule8_1_h"
+              ]
+            },
+            {
+              "required": [
+                "rule7_2_a"
+              ]
+            },
+            {
+              "required": [
+                "rule7_2_b"
+              ]
+            },
+            {
+              "required": [
+                "revitc"
+              ]
+            },
+            {
+              "required": [
+                "other"
+              ]
+            },
+            {
+              "required": [
+                "rule7_1_m"
+              ]
+            }
+          ],
+          "properties": {
+            "chksum": {
+              "$ref": "#/definitions/chksum"
+            },
+            "flag": {
+              "$ref": "#/definitions/operationflag"
+            },
+            "other": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/neg-amt"
+                }
+              },
+              "type": "object"
+            },
+            "revitc": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule2_2": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule7_1_m": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule7_2_a": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule7_2_b": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule8_1_h": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "flag"
+          ],
+          "properties": {
+            "chksum": {
+              "$ref": "#/definitions/chksum"
+            },
+            "flag": {
+              "$ref": "#/definitions/otherflag"
+            },
+            "other": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/neg-amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/neg-amt"
+                }
+              },
+              "type": "object"
+            },
+            "revitc": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule2_2": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule7_1_m": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule7_2_a": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule7_2_b": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            },
+            "rule8_1_h": {
+              "properties": {
+                "camt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "csamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "iamt": {
+                  "$ref": "#/definitions/amt"
+                },
+                "samt": {
+                  "$ref": "#/definitions/amt"
+                }
+              },
+              "type": "object"
+            }
+          }
+        }
+      ]
+    },
+    "itc_rvsla": {
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "required": [
+              "omon"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "rule2_2"
+                ]
+              },
+              {
+                "required": [
+                  "rule8_1_h"
+                ]
+              },
+              {
+                "required": [
+                  "rule7_2_a"
+                ]
+              },
+              {
+                "required": [
+                  "rule7_2_b"
+                ]
+              },
+              {
+                "required": [
+                  "revitc"
+                ]
+              },
+              {
+                "required": [
+                  "other"
+                ]
+              },
+              {
+                "required": [
+                  "rule7_1_m"
+                ]
+              }
+            ],
+            "properties": {
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "flag": {
+                "$ref": "#/definitions/operationflag"
+              },
+              "omon": {
+                "description": "Original Month",
+      			"type": "string",
+      			"minLength": 1,
+      			"pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+              },
+              "other": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/neg-amt"
+                  }
+                },
+                "type": "object"
+              },
+              "revitc": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule2_2": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule7_1_m": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule7_2_a": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule7_2_b": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule8_1_h": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "flag",
+              "omon"
+            ],
+            "properties": {             
+              "chksum": {
+                "$ref": "#/definitions/chksum"
+              },
+              "flag": {
+                "$ref": "#/definitions/otherflag"
+              },
+              "omon": {
+                "description": "Original Month",
+      			"type": "string",
+      			"minLength": 1,
+      			"pattern": "^((0[1-9]|1[012])((19|20)\\d\\d))$"
+              },
+              "other": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/neg-amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/neg-amt"
+                  }
+                },
+                "type": "object"
+              },
+              "revitc": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule2_2": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule7_1_m": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule7_2_a": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule7_2_b": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              },
+              "rule8_1_h": {
+                "properties": {
+                  "camt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "csamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "iamt": {
+                    "$ref": "#/definitions/amt"
+                  },
+                  "samt": {
+                    "$ref": "#/definitions/amt"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "gstin",
+    "fp"
+  ],
+  "definitions": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonEmptydate": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^((0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-]((19|20)\\d\\d))$"
+    },
+    "gstin": {
+      "type": "string",
+      "maxLength": 15,
+      "minLength": 15,
+      "pattern": "^[a-zA-Z0-9._\\s]+$"
+    },
+    "actionflag": {
+      "type": "string",
+      "enum": [
+        "P",
+        "R"
+      ]
+    },
+    "operationflag": {
+      "type": "string",
+      "enum": [
+        "N",
+        "E"
+      ]
+    },
+    "sez_flag": {
+      "type": "string",
+      "enum": [
+        "Y",
+        "N"
+      ]
+    },
+    "otherflag": {
+      "type": "string",
+      "enum": [
+        "D"
+      ]
+    },
+    "acceptflag": {
+      "type": "string",
+      "enum": [
+        "A"
+      ]
+    },
+    "rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 999.99
+    },
+    "amt": {
+      "type": "number",
+      "maximum": 999999999999999.99,
+      "minimum": 0,
+      "multipleOf": 0.01
+    },
+    "neg-amt": {
+      "type": "number",
+      "maximum": 999999999999999.99,
+      "minimum": -999999999999999.99,
+      "multipleOf": 0.01
+    },
+    "higher_lvl_amt": {
+      "type": "number",
+      "maximum": 1000000000000000,
+      "minimum": 0,
+      "multipleOf": 0.01
+    },
+    "qty": {
+      "type": "number",
+      "maximum": 9999999999.99,
+      "minimum": 0,
+      "multipleOf": 0.001
+    },
+    "invtype": {
+      "type": "string",
+      "enum": [
+        "R",
+        "DE",
+        "SEWP",
+        "SEWOP"
+      ]
+    },
+    "num": {
+      "type": "string",
+      "maxLength": 16,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9-/]+$"
+    },
+    "boe_num": {
+      "type": "string",
+      "maxLength": 7,
+      "minLength": 7,
+      "pattern": "^[0-9]+$"
+    },
+    "port_cd": {
+      "type": "string",
+      "maxLength": 6,
+      "minLength": 6,
+      "pattern": "^[a-zA-Z0-9]+$"
+    },
+    "chksum": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]+$"
+    },
+    "state_cd": {
+      "type": "string",
+      "description": "Recipient state code",
+      "pattern": "^(3[0-7]|[12][0-9]|0[1-9]|97)$",
+      "maxLength": 2,
+      "minLength": 2
+    },
+    "ntty": {
+      "type": "string",
+      "enum": [
+        "C",
+        "D"
+      ]
+    },
+    "hsn_supply_typ": {
+      "type": "string",
+      "enum": [
+        "INTERB2B",
+        "INTRAB2B",
+        "INTERB2C",
+        "INTRAB2C"
+      ]
+    },
+    "supply_type": {
+      "type": "string",
+      "enum": [
+        "INTER",
+        "INTRA"
+      ]
+    },
+    "boolean": {
+      "type": "string",
+      "enum": [
+        "Y",
+        "N"
+      ]
+    },
+    "goods_type": {
+      "type": "string",
+      "enum": [
+        "G",
+        "S"
+      ]
+    },
+    "invoice_type": {
+      "type": "string",
+      "enum": [
+        "B2B",
+        "DBNOTE",
+        "IMPG",
+        "IMPS",
+        "B2BUR"
+      ]
+    },
+     "inv_type": {
+      "type": "string",
+      "enum": [
+        "IMPS",
+        "B2BUR"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,835 @@
+
+                            <%-- <!-- START Tabel 7-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table7">
+                                            <span class="gstr_row_title">Table 7 :</span>
+                                            <span class="gstr_row_desc">Taxable outward supplies to consumer (Other than 6 above) </span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table7" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2">Goods / Services</th>
+                                                    <th rowspan="2">HSN / SAC</th>
+                                                    <th rowspan="2">State code (Place of Supply)</th>
+                                                    <th rowspan="2">Aggregate Taxable Value</th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                    <th rowspan="2">Tax on this supply is paid under provisional assessment (Checkbox)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>(1)</th>
+                                                    <th>(2)</th>
+                                                    <th>(3)</th>
+                                                    <th>(4)</th>
+                                                    <th>(5)</th>
+                                                    <th>(6)</th>
+                                                    <th>(7)</th>
+                                                    <th>(8)</th>
+                                                    <th>(9)</th>
+                                                    <th>(10)</th>
+                                                    <th>(11)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 7-->
+                             <!-- START Tabel 7A-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table7A">
+                                            <span class="gstr_row_title">Table 7A :</span>
+                                            <span class="gstr_row_desc">Amendment to Taxable outward supplies to consumer of earlier tax periods (original supplies covered under 7 above in earlier tax period (s))</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table7A" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="4">Original Details</th>
+                                                    <th colspan="3">Revised Details</th>
+                                                    <th rowspan="2">Aggregat e-Taxable Value</th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                    <th rowspan="2">Tax on this supply is paid under provisional assessment (Checkbox)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Month (Tax Period)</th>
+                                                    <th>Goods and Services</th>
+                                                    <th>HSN / SAC</th>
+                                                    <th>State Code </th>
+                                                    <th>Goods / Services</th>
+                                                    <th>HSN / SAC</th>
+                                                    <th>State code (Place of Supply (State Code))</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>(1)</th>
+                                                    <th>(2)</th>
+                                                    <th>(3)</th>
+                                                    <th>(4)</th>
+                                                    <th>(5)</th>
+                                                    <th>(6)</th>
+                                                    <th>(7)</th>
+                                                    <th>(8)</th>
+                                                    <th>(9)</th>
+                                                    <th>(10)</th>
+                                                    <th>(11)</th>
+                                                    <th>(12)</th>
+                                                    <th>(13)</th>
+                                                    <th>(14)</th>
+                                                    <th>(15)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 7A-->
+                             <!-- START Tabel 8-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table8">
+                                            <span class="gstr_row_title">Table 8 :</span>
+                                            <span class="gstr_row_desc">Details of Credit/Debit Notes</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table8" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="3">GSTIN / UIN / Name of recipient</th>
+                                                    <th rowspan="3">Type of note (Debit/Credit)</th>
+                                                    <th colspan="2">Debit Note / Credit note</th>
+                                                    <th colspan="2">Original Invoice </th>
+                                                    <th rowspan="3">Differential Value (Plus or Minus)</th>
+                                                    <th colspan="6">Differential Tax</th>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2">No.</th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th rowspan="2">No.</th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                </tr>
+                                                 <tr>
+                                                    <th>(1)</th>
+                                                    <th>(2)</th>
+                                                    <th>(3)</th>
+                                                    <th>(4)</th>
+                                                    <th>(5)</th>
+                                                    <th>(6)</th>
+                                                    <th>(7)</th>
+                                                    <th>(8)</th>
+                                                    <th>(9)</th>
+                                                    <th>(10)</th>
+                                                    <th>(11)</th>
+                                                    <th>(12)</th>
+                                                    <th>(13)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th colspan="13" style="padding:1px">Other than reverse charge</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="13" style="padding:1px">Reverse charge</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 8-->
+                             <!-- START Tabel 8A-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table8A">
+                                            <span class="gstr_row_title">Table 8A :</span>
+                                            <span class="gstr_row_desc">Amendment to Details of Credit/Debit Notes of earlier tax periods</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table8A" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="3">GSTIN / UIN / Name of recipient</th>
+                                                    <th rowspan="3">Type of note (Debit/Credit)</th>
+                                                    <th colspan="2">Original</th>
+                                                    <th colspan="2">Revised </th>
+                                                    <th colspan="2">Original Invoice Details</th>
+                                                    <th rowspan="3">Differential Value (Plus or Minus)</th>
+                                                    <th colspan="6">Differential Tax</th>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2">No.</th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th rowspan="2">No.</th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th rowspan="2">No.</th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                </tr>
+                                                 <tr>
+                                                    <th>(1)</th>
+                                                    <th>(2)</th>
+                                                    <th>(3)</th>
+                                                    <th>(4)</th>
+                                                    <th>(5)</th>
+                                                    <th>(6)</th>
+                                                    <th>(7)</th>
+                                                    <th>(8)</th>
+                                                    <th>(9)</th>
+                                                    <th>(10)</th>
+                                                    <th>(11)</th>
+                                                    <th>(12)</th>
+                                                    <th>(13)</th>
+                                                    <th>(14)</th>
+                                                    <th>(15)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th colspan="15" style="padding:1px">Other than reverse charge</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="15" style="padding:1px">Reverse charge</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 8A-->
+                             <!-- START Tabel 9-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table9">
+                                            <span class="gstr_row_title">Table 9 :</span>
+                                            <span class="gstr_row_desc">Amendment to Details of Credit/Debit Notes of earlier tax periods</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table9" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Goods/Services</th>
+                                                    <th>Nil Rated (Amount)</th>
+                                                    <th>Exempted (Amount)</th>
+                                                    <th>Non GST Supplies (Amount)</th>
+                                                </tr>
+                                                 <tr>
+                                                    <th>(1)</th>
+                                                    <th>(2)</th>
+                                                    <th>(3)</th>
+                                                    <th>(4)</th>
+                                                    <th>(5)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Interstate supplies to registered person</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Interstate supplies to registered person</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Interstate supplies to consumer</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Interstate supplies to consumer</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 9-->
+                             <!-- START Tabel 10-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table10">
+                                            <span class="gstr_row_title">Table 10:</span>
+                                            <span class="gstr_row_desc">Supplies Exported (including deemed exports)</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table10" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>                                                   
+                                                    <th rowspan="3">    Description</th>
+                                                    <th colspan="6">Invoice</th>
+                                                    <th colspan="2">Shipping bill/ bill of export</th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                    <th rowspan="2">Tax on this Invoice is paid under provisional assessment (Checkbox)</th>
+                                                </tr>
+                                                
+                                                <tr>                                                   
+                                                    <th>No. </th>
+                                                    <th>Date</th>
+                                                    <th>Value</th>
+                                                    <th>Goods / Services </th>
+                                                    <th>HSN /SAC </th>
+                                                    <th>Taxable value</th>
+                                                    <th>No.</th>
+                                                    <th>Date </th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                </tr>
+                                                
+                                                <tr>                                                   
+                                                    <th>(1) </th>
+                                                    <th>(2) </th>
+                                                    <th>(3) </th>
+                                                    <th>(4) </th>
+                                                    <th>(5) </th>
+                                                    <th>(6)</th>
+                                                    <th>(7) </th>
+                                                    <th>(8) </th>
+                                                    <th>(9) </th>
+                                                    <th>(10)</th>
+                                                    <th>(11)</th>
+                                                    <th>(12)</th>
+                                                    <th>(13)</th>
+                                                    <th>(14)</th>
+                                                    <th>(15)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Without payment of GST</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>With payment of GST</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 10-->
+                             <!-- START Tabel 10A-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table10A">
+                                            <span class="gstr_row_title">Table 10A:</span>
+                                            <span class="gstr_row_desc">Amendment to Supplies Exported (including deemed exports)</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table10A" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>                                                   
+                                                    <th rowspan="3">Description</th>
+                                                    <th colspan="2">Original Invoice</th>
+                                                    <th colspan="5">Invoice</th>
+                                                    <th colspan="2">Shipping bill/ bill of export</th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                    <th rowspan="2">Tax on this Invoice is paid under provisional assessment (Checkbox)</th>
+                                                </tr>
+                                                
+                                                <tr>                                                   
+                                                    <th>No. </th>
+                                                    <th>Date</th>
+                                                    <th>No. </th>
+                                                    <th>Date</th>
+                                                    <th>Goods / Services </th>
+                                                    <th>HSN /SAC </th>
+                                                    <th>Taxable value</th>
+                                                    <th>No.</th>
+                                                    <th>Date </th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                    <th>Rate</th>
+                                                    <th>Amt</th>
+                                                </tr>
+                                                
+                                                <tr>                                                   
+                                                    <th>(1) </th>
+                                                    <th>(2)</th>
+                                                    <th>(3) </th>
+                                                    <th>(4) </th>
+                                                    <th>(5) </th>
+                                                    <th>(6) </th>
+                                                    <th>(7)</th>
+                                                    <th>(8) </th>
+                                                    <th>(9) </th>
+                                                    <th>(10) </th>
+                                                    <th>(11)</th>
+                                                    <th>(12)</th>
+                                                    <th>(13)</th>
+                                                    <th>(14)</th>
+                                                    <th>(15)</th>
+                                                    <th>(16)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Without payment of GST</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>With payment of GST</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 10A-->                            
+                             <!-- START Tabel 11-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table11">
+                                            <span class="gstr_row_title">Table 11:</span>
+                                            <span class="gstr_row_desc">Tax liability arising on account of Time of Supply without issuance of Invoice in the same period</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table11" class="panel-collapse collapse">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>                                                   
+                                                    <th rowspan="3">GSTIN / UIN / Name of customer</th>
+                                                    <th rowspan="3">State Code</th>
+                                                    <th rowspan="3">Document No. </th>
+                                                    <th rowspan="3">Date</th>
+                                                    <th rowspan="3">Goods / Services </th>
+                                                    <th rowspan="3">HSN / SAC of supply </th>
+                                                    <th rowspan="3">Amount of advance received / Value of Supply provided without raising a bill</th>
+                                                    <th colspan="6">TAX</th>
+                                                </tr>
+                                                <tr>                                                   
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                </tr>
+                                                <tr>                                                   
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                </tr>
+                                                <tr>                                                   
+                                                    <th>(1) </th>
+                                                    <th>(2) </th>
+                                                    <th>(3) </th>
+                                                    <th>(4) </th>
+                                                    <th>(5) </th>
+                                                    <th>(6) </th>
+                                                    <th>(7) </th>
+                                                    <th>(8) </th>
+                                                    <th>(9) </th>
+                                                    <th>(10)</th>
+                                                    <th>(11)</th>
+                                                    <th>(12)</th>
+                                                    <th>(13)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 11-->                           
+                             <!-- START Tabel 11A-->
+                            <div class="panel panel-default panel-demo">
+                                <div class="panel-heading">
+                                    <a href="javascript:void(0);" data-perform="panel-refresh" data-spinner="traditional" title="" class="pull-right" data-original-title="Refresh Panel">
+                                        <em class="fa fa-refresh"></em>
+                                    </a>
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#table11A">
+                                            <span class="gstr_row_title">Table 11A:</span>
+                                            <span class="gstr_row_desc">Tax liability arising on account of Time of Supply without issuance of Invoice in the same period</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="table11A" class="panel-collapse collapse in">
+                                    <div class="panel-table table-responsive">
+
+                                        <table class="table table-bordered table-gstr">
+                                            <thead>
+                                                <tr>                                                   
+                                                    <th colspan="3">Original Details</th>
+                                                    <th colspan="6">Revised Details</th>
+                                                    <th rowspan="3">Amount of advance received / Value of Supply provided without raising a bill</th>
+                                                    <th colspan="6">TAX</th>
+                                                </tr>
+                                                <tr>                                                   
+                                                    <th rowspan="2">GSTIN / UIN / Name of customer</th>
+                                                    <th rowspan="2">Document No. </th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th rowspan="2">GSTIN / UIN / Name of customer</th>
+                                                    <th rowspan="2">State Code</th>
+                                                    <th rowspan="2">Document No. </th>
+                                                    <th rowspan="2">Date</th>
+                                                    <th rowspan="2">Goods / Services </th>
+                                                    <th rowspan="2">HSN / SAC of supply </th>
+                                                    <th colspan="2">IGST</th>
+                                                    <th colspan="2">CGST</th>
+                                                    <th colspan="2">SGST</th>
+                                                </tr>
+                                                <tr>                                                   
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                </tr>
+                                                <tr>                                                   
+                                                    <th>(1)</th>
+                                                    <th>(2)</th>
+                                                    <th>(3)</th>
+                                                    <th>(4) </th>
+                                                    <th>(5) </th>
+                                                    <th>(6) </th>
+                                                    <th>(7) </th>
+                                                    <th>(8) </th>
+                                                    <th>(9) </th>
+                                                    <th>(10) </th>
+                                                    <th>(11) </th>
+                                                    <th>(12) </th>
+                                                    <th>(13)</th>
+                                                    <th>(14)</th>
+                                                    <th>(15)</th>
+                                                    <th>(16)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                    <td>1234</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Table 11A-->--%>

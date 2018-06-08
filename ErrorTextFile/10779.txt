@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+***GST SAATHI REUTRN FILING PORTAL****                           Client Code : 3
+
+   SALES DATA IMPORT VALIDITY :                                  Client Name : Tata consultancy & Services Indore
+   Date & Time : 17-11-2017 14:54:08 PM                          Client GSTIN : 23AOOPY8203P1Z1
+
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+Section   |Line No |Column|Error Desc With Code
+b2b       |10      |D     |Invalid Numberic value
+b2b       |12      |I     |Invalid Numberic value
+b2b       |18      |C     |Date Format Must Be "DD/MM/YYYY"
+hsnsum    |11      |G     |Invalid Numberic value
+
+******************************************END OF THE RECORDS***************************************************
