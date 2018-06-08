@@ -37,6 +37,7 @@
                     <div class="col-sm-8 oswalhead text-center">
                         <%--<asp:Label ID="lblOrgName" runat="server" />--%>
                         <label class="lbtext">GST Return Filing Portal</label>
+                         <label class="lbtext">GST Return Filing Portal</label>
                     </div>
                     <ul class="nav navbar-nav">
                       <!--  <li>
