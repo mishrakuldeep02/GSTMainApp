@@ -45,7 +45,7 @@
                             </a>
                         </li>-->
                     </ul>
-
+                     <ul class="nav navbar-nav navbar-right"></ul>
                     <ul class="nav navbar-nav navbar-right">
                        <!-- <li>
                             <a href="../Logout.aspx" id="logout" title="Logout" class="text-center">
